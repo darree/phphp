@@ -1,15 +1,12 @@
 <!--<pre> <?php print_r($_POST); ?> </pre> -->
-
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
 
     if(!empty($_POST)) {
         require_once('../includes/class-insert.php');
- //       print_r($_POST);
-       if ($insert->post($_POST)){
-           echo '<p>Data inserted successfuly</p>';
-       }
+        print_r($_POST);
+        print_r($insert->post($_POST));
     }
 ?>
 <!DOCTYPE html>
@@ -20,7 +17,7 @@
  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
 </head>
 <body>
-    <form action="post-edit.php" method="post">
+    <form action="post">
         <p><input type="text" name="post_title"/></p>
         <p><textarea name="post_content" id="" cols="30" rows="10"></textarea></p>
         <p>
