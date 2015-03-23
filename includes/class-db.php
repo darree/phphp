@@ -18,6 +18,17 @@ if (!class_exists('DB')){
             $result= $mysqli->query($query);
             return $result;
         }
+
+        public function select($query){
+            $mysqli=$this->connection;
+
+            $result = $mysqli->query($query);
+            while($obj = $result->fetch_object()){
+                $results[]=$obj;
+
+            }
+            return $results;
+        }
     }
 }
 $db= new DB;
